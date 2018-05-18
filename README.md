@@ -7,11 +7,11 @@
   
   ### The Lq-norm learning for ultrahigh-dimensional survival data: an integrated framework, 2018 
   * [paper]
-  * [R code](https://github.com/younghhk/software/blob/master/R/Lq.r)
+  * [R code](https://github.com/younghhk/software/blob/master/Lq.r)
   
   ### Integrated powered density: screening ultrahigh dimensional covariates with survival outcome, *Biometrics*, 2018 
   * [paper](https://www.stt.msu.edu/users/hhong/Hong_et_al-2017-Biometrics.pdf)
-  * [R code](https://github.com/younghhk/software/blob/master/R/IPOD.r)
+  * [R code](https://github.com/younghhk/software/blob/master/IPOD.r)
  
  ### Conditional screening for survival data, *LIDA*, 2018
  * [paper](https://www.stt.msu.edu/users/hhong/conditional_survival.pdf) 
@@ -19,5 +19,5 @@
  
  ### Quantile adaptive model-free variable screening for high-dimensional heterogeneous data, *AOS*, 2013
  * [paper](https://www.stt.msu.edu/users/hhong/screening.pdf)
- * [R code](https://github.com/younghhk/software/blob/master/R/QA.r)
+ * [R code](https://github.com/younghhk/software/blob/master/QA.r)
   
