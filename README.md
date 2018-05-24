@@ -18,7 +18,8 @@
  
  ### Conditional screening for survival data, *LIDA*, 2018
  * [paper](https://www.stt.msu.edu/users/hhong/conditional_survival.pdf) 
- * R code
+ * [R code](https://github.com/younghhk/software/blob/master/CS.R)
+ 
  
  ### Quantile adaptive model-free variable screening for high-dimensional heterogeneous data, *AOS*, 2013
  * [paper](https://www.stt.msu.edu/users/hhong/screening.pdf)
