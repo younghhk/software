@@ -7,7 +7,7 @@
   
   ### Forward regression for high-dimensional survival data, 2018
   
-  ### The Lq-norm learning for ultrahigh-dimensional survival data: an integrated framework, 2018 
+  ### The Lq-norm learning for ultrahigh-dimensional survival data: an integrated framework, *Statistica Sinica*, 2018 
   * [paper]
   * [R code](https://github.com/younghhk/software/blob/master/Lq.R)
   
