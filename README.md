@@ -1,3 +1,6 @@
+## COVID-19 Infectious disease modeling
+### Time-varying Poisson SIR model (2020)
+* [paper](https://arxiv.org/abs/2004.05730)  &nbsp; &nbsp;&nbsp; &nbsp;   [R code](R/tvpSIR.R)
 
 ## Survival data screening in high-dimensional data 
 
