@@ -1,12 +1,12 @@
 #CODE
 #####################################
-# Note (last update: 7/28/2020)
+# Note (last update: 1/11/2021)
 # tvpSIR.R
 # run the time-varing Poisson SIR model (tvpSIR.R).
 # the goal is to obtain predicted  R0(t)
 
 #Example
-out=tvpSIR(Co="Korea",esp=.5,P=0,p=8,q=5)
+out=tvpSIR(Co="Korea",eps=.5,P=0,p=8,q=5)
 T=nrow(out$all)
 data.frame(out$all[,1], out$all$R0)[(T-14):T,]
 ########################################
@@ -16,9 +16,9 @@ library("numDeriv")
 #Co:select country
 #P:prediction interval
 #p,q: the number of knots
-#esp: regression penalty
+#eps: regression penalty
 
-tvpSIR=function(Co,esp,P,p,q){
+tvpSIR=function(Co,eps,P,p,q){
   data=choose.country(Co)
   dat=data$k
   date=dat[,1]
@@ -34,13 +34,13 @@ tvpSIR=function(Co,esp,P,p,q){
   i0=ii[1]/N;i0
   Z.r=rr/N
   Z.i=ii/N
-
+  
   T=length(Z.r)-P #duration for estimation;remaining for validation
   times=1:T
   spdeg=3
   
-
-
+  
+  
   knots1 <- seq(from=min(times),to=max(times),length=p+2)[2:(p+1)]
   knots2<-seq(from=min(times),to=max(times),length=q+2)[2:(q+1)]
   result0=nlm(NegLogcst, c(0,0), Z.r[1:T], Z.i[1:T],r0,i0, hessian=F, times,N, iterlim=1000)
@@ -55,7 +55,7 @@ tvpSIR=function(Co,esp,P,p,q){
   
   est=SIR(times, x, r0,i0, knots1,knots2, spdeg)
   
-
+  
   ##estimate CI of I and R
   remove=numeric(T)
   infect=numeric(T)
@@ -89,7 +89,7 @@ tvpSIR=function(Co,esp,P,p,q){
   }
   
   
- 
+  
   
   newtime=date[first.date:(nrow(dat)-P)]
   all0= N*cbind( Z.r[1:T], est$r,  Z.i[1:T], est$i, lo.infect, up.infect,lo.remove, up.remove)
@@ -98,7 +98,7 @@ tvpSIR=function(Co,esp,P,p,q){
   
   
   
- 
+  
   func.beta = splinefun(x=times, y=est$beta, method="monoH.FC",  ties = mean)
   func.gamma = splinefun(x=times, y=est$gamma, method="monoH.FC",  ties = mean)
   func.r = splinefun(x=times, y=est$r, method="monoH.FC",  ties = mean)
@@ -122,13 +122,13 @@ SIR<- function(times, x, r0,i0, knots1,knots2,spdeg){
   r=numeric(T)
   i[1]=i0
   r[1]=r0
-
   
- 
+  
+  
   t0.beta<-bs(times,  knots =knots1,  degree = spdeg, intercept =TRUE,Boundary.knots=c(-20,T+3))
   t0.gamma<-bs(times,  knots =knots2,  degree = spdeg, intercept =TRUE,Boundary.knots=c(-20,T+3))
   k=dim(t0.beta)[2]
-
+  
   
   beta = exp( t0.beta%*% x[1:k]) 
   gamma = exp(t0.gamma%*% x[-(1:k)]) 
@@ -189,7 +189,7 @@ NegLoglik=function(x,Z.r,Z.i,r0,i0,times,N, knots1,knots2,spdeg,eps){
   Loglik=N*sum(-R+Z.r*log(R) -I+Z.i*log(I) )   
   T=length(times)
   eps=  eps*T  ## important to add this term to ensure the gamma will not be estimated to be 0
-    return(-Loglik + eps*t(x)%*%x)
+  return(-Loglik + eps*t(x)%*%x)
 }
 
 #####################################
@@ -198,6 +198,11 @@ RI=function(x, r0,i0, time, knots1,knots2, spdeg, times){
   remove=z$r[time]
   infect=z$i[time]
   return(c(remove,infect))
+}
+
+
+make.dat <- function(data){
+  data[, c(1, 7, 8, 9)]
 }
 
 ###########################
@@ -212,12 +217,12 @@ choose.country=function(Country){
     k=make.dat(data)
     N=10099265
   }
- 
-
+  
+  
   if(Country=="US"){
     data=read.csv("https://raw.githubusercontent.com/ulklc/covid19-timeseries/master/countryReport/country/US.csv")
     k=make.dat(data)
     N=331002651
-    }
+  }
   list(k=k,N=N)
 }
