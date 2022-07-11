@@ -23,6 +23,10 @@ outcome.
   * [paper](https://www.stt.msu.edu/users/hhong/conditional_survival.pdf)  &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/CS.R)
   
 #### Quantile adaptive model-free variable screening for high-dimensional heterogeneous data (2013)
- * The propsoed nonlinear independence screening procedure employs spline approximations to model the marginal effects at a quantile level of interest.
+ * The proposed nonlinear independence screening procedure employs spline approximations to model the marginal effects at a quantile level of interest.
  * [paper](https://www.stt.msu.edu/users/hhong/screening.pdf) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/QA.R)
+   
+#### Peters-Belson analysis of the quantile regression for complex survey data
+ *  The method proposes a quantile regression (QR) decomposition approach to disparity research using complex survey data. 
+ * [paper](RBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR.R)
    
