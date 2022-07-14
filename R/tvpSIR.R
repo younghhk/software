@@ -1,4 +1,5 @@
 #####################################
+# Update: 07/14/2022
 # Note: Current data from this source is only available till 12/07/2020.
 # This following tvpSIR() function is to estimate/predict time-varying reproduction numbers which was proposed in 
 # Estimation of time-varying reproduction numbers underlying epidemiological processes: A new statistical tool for the COVID-19 pandemic by Hong and Li (2021)
