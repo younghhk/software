@@ -1,14 +1,15 @@
 #CODE
 #####################################
-# Note (last update: 7/28/2020)
+# Note (last update: 7/14/2022)
 # tvpSIR.R
 # run the time-varing Poisson SIR model (tvpSIR.R).
 # the goal is to obtain predicted  R0(t)
 
 #Example
-out=tvpSIR(Co="Korea",esp=.5,P=0,p=8,q=5)
+out=tvpSIR(Co="US",esp=.5,P=0,p=8,q=5)
 T=nrow(out$all)
-data.frame(out$all[,1], out$all$R0)[(T-14):T,]
+res=data.frame(out$all[,1], out$all$R0)[(T-14):T,]
+res
 ########################################
 #Required the following
 library(splines)
@@ -47,7 +48,7 @@ tvpSIR=function(Co,esp,P,p,q){
   initial= c( rep(result0$estimate[1], length(knots1)+spdeg+1), rep(result0$estimate[2], length(knots2)+spdeg+1)) 
   
   
-  result=nlm(NegLoglik, p=initial, Z.r[1:T], Z.i[1:T],r0,i0, hessian=T, times,N, eps, knots1=knots1,knots2=knots2, 
+  result=nlm(NegLoglik, p=initial, Z.r[1:T], Z.i[1:T],r0,i0, hessian=T, times,N, esp, knots1=knots1,knots2=knots2, 
              spdeg=spdeg, steptol=1e-7, iterlim=1000)
   
   x=result$estimate 
@@ -182,14 +183,14 @@ NegLogcst=function(x,Z.r,Z.i,r0,i0,times,N){
 
 
 ###########################################
-NegLoglik=function(x,Z.r,Z.i,r0,i0,times,N, knots1,knots2,spdeg,eps){
+NegLoglik=function(x,Z.r,Z.i,r0,i0,times,N, knots1,knots2,spdeg,esp){
   z=SIR(times, x, r0, i0,knots1,knots2, spdeg)
   R=z$r
   I=z$i
   Loglik=N*sum(-R+Z.r*log(R) -I+Z.i*log(I) )   
   T=length(times)
-  eps=  eps*T  ## important to add this term to ensure the gamma will not be estimated to be 0
-    return(-Loglik + eps*t(x)%*%x)
+  esp=  esp*T  ## important to add this term to ensure the gamma will not be estimated to be 0
+    return(-Loglik + esp*t(x)%*%x)
 }
 
 #####################################
