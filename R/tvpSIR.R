@@ -221,3 +221,14 @@ choose.country=function(Country){
     }
   list(k=k,N=N)
 }
+
+make.dat=function(dat){
+  case=as.numeric(dat[,7])
+  recovered=as.numeric(dat[,8])
+  death=as.numeric(dat[,9])
+  case=case-recovered-death
+  removal=death+recovered
+  date=dat[,1]
+  k=data.frame(date=date,case=case,removal=removal)
+  return(k)
+}
