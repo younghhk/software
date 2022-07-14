@@ -1,23 +1,24 @@
-#CODE
 #####################################
-# Note (last update: 7/14/2022)
-# tvpSIR.R
-# run the time-varing Poisson SIR model (tvpSIR.R).
-# the goal is to obtain predicted  R0(t)
+# Note: Current data from this source is only available till 12/07/2020.
+# This following tvpSIR() function is to estimate/predict time-varying reproduction numbers which was proposed in 
+# Estimation of time-varying reproduction numbers underlying epidemiological processes: A new statistical tool for the COVID-19 pandemic by Hong and Li (2021)
+# https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0236464 
+# Any questions? Email grace.hong@nih.gov
 
-#Example
+# Example
+##Co:select country
+##P:prediction interval
+##p,q: the number of knots
+##esp: regression penalty
 out=tvpSIR(Co="US",esp=.5,P=0,p=8,q=5)
 T=nrow(out$all)
 res=data.frame(out$all[,1], out$all$R0)[(T-14):T,]
 res
 ########################################
-#Required the following
+
+#Source functions
 library(splines)
 library("numDeriv")
-#Co:select country
-#P:prediction interval
-#p,q: the number of knots
-#esp: regression penalty
 
 tvpSIR=function(Co,esp,P,p,q){
   data=choose.country(Co)
