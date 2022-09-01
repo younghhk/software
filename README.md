@@ -1,4 +1,4 @@
-## COVID-19 Infectious disease modeling
+## COVID-19 infectious disease modeling
 ### Time-varying Poisson SIR model (2020)
 * [paper](https://arxiv.org/abs/2004.05730)  &nbsp; &nbsp;&nbsp; &nbsp;   [R code](R/tvpSIR.R)
 
@@ -25,8 +25,9 @@ outcome.
 #### Quantile adaptive model-free variable screening for high-dimensional heterogeneous data (2013)
  * The proposed nonlinear independence screening procedure employs spline approximations to model the marginal effects at a quantile level of interest.
  * [paper](https://www.stt.msu.edu/users/hhong/screening.pdf) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/QA.R)
-   
+
+## Health disparity decomposition model (2022)
 #### A quantile regression decomposition estimation of disparities for complex survey data
  *  The method proposes a quantile regression (QR) decomposition approach to disparity research using complex survey data. 
- * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR.R)
+ * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR_github.R)
    
