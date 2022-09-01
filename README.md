@@ -26,7 +26,7 @@ outcome.
  * The proposed nonlinear independence screening procedure employs spline approximations to model the marginal effects at a quantile level of interest.
  * [paper](https://www.stt.msu.edu/users/hhong/screening.pdf) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/QA.R)
    
-#### Peters-Belson analysis of the quantile regression for complex survey data
+#### A quantile regression decomposition estimation of disparities for complex survey data
  *  The method proposes a quantile regression (QR) decomposition approach to disparity research using complex survey data. 
- * [paper](RBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR.R)
+ * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR.R)
    
