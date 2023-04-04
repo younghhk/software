@@ -1,3 +1,18 @@
+## Models for health disparity analysis 
+
+#### Varying-coefficients for regional quantile via KNN-based LASSO with applications to health outcome study (2023+)
+ * This novel framework for dynamic modeling of the associations
+between health outcomes and risk factors can capture
+the time-varying effects of age.
+  * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/KNN_github.R)
+  
+#### A quantile regression decomposition estimation of disparities for complex survey data (2023+)
+ *  The method proposes a quantile regression (QR) decomposition approach to disparity research using complex survey data. 
+ * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR_github.R)
+   
+
+
+ 
 ## COVID-19 infectious disease modeling
 ### Time-varying Poisson SIR model (2020)
 * [paper](https://arxiv.org/abs/2004.05730)  &nbsp; &nbsp;&nbsp; &nbsp;   [R code](R/tvpSIR.R)
@@ -26,8 +41,3 @@ outcome.
  * The proposed nonlinear independence screening procedure employs spline approximations to model the marginal effects at a quantile level of interest.
  * [paper](https://www.stt.msu.edu/users/hhong/screening.pdf) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/QA.R)
 
-## Health disparity decomposition model (2022)
-#### A quantile regression decomposition estimation of disparities for complex survey data
- *  The method proposes a quantile regression (QR) decomposition approach to disparity research using complex survey data. 
- * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](R/PBQR_github.R)
-   
