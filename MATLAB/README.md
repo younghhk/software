@@ -33,15 +33,18 @@ We use parametric max-flow algorithm in "On Total Variation Minimization and Sur
 ## Authors
 
 * [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home)
-and [**Hyokyoung (Grace) Hong**](https://dceg.cancer.gov/about/staff-directory/hong-grace)
-
- Department of Statistics, Sungkyunkwan University and
- Division of Cancer Epidemiology & Genetics, National Cancer Institute, NIH.
 
 
-## Contact
+ Department of Statistics, Sungkyunkwan University 
+ 
+ and [**Hyokyoung (Grace) Hong**](https://dceg.cancer.gov/about/staff-directory/hong-grace)
+ 
+ Division of Cancer Epidemiology & Genetics, National Cancer Institute, NIH
 
-* ishspsy@skku.edu
+
+## For any questions or inquiries related to the code, please reach out to us at ishspsy@skku.edu.
+
+
 
 
 
