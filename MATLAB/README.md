@@ -18,7 +18,8 @@ The proposed KNN-based LASSO is a novel framework for dynamic modeling of the as
 - [likelihood_knn.m](https://github.com/younghhk/software/blob/master/MATLAB/KNN/likelihood_knn.m)
 : Computing likelihood value (used for BIC computation).
 
-
+- [supplementary_code](https://github.com/younghhk/software/tree/master/MATLAB/KNN/supplementary_code)
+: Directory including all the source files and functions related to KNN Lasso
 
 
 ## Authors
