@@ -32,7 +32,7 @@ We use parametric max-flow algorithm in "On Total Variation Minimization and Sur
 
 ## Authors
 
-* [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home)
+ [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home)
 
 
  Department of Statistics, Sungkyunkwan University 
@@ -42,7 +42,7 @@ We use parametric max-flow algorithm in "On Total Variation Minimization and Sur
  Division of Cancer Epidemiology & Genetics, National Cancer Institute, NIH
 
 
-## For any questions or inquiries related to the code, please reach out to us at ishspsy@skku.edu.
+* For any questions or inquiries related to the code, please reach out to us at ishspsy@skku.edu.
 
 
 
