@@ -1,176 +1,39 @@
-# MKerW-A: Integrating multidimensional data for clustering analysis with applications to cancer patient data
+# Varying-coefficients for regional quantile via KNN-based LASSO with applications to health outcome study (2023+)
 
 
 
 ## Overview
 
-*MKerW-A* is a novel multi-view spectral clustering framework to integrate different omics data types measured from the same subjects by treating each omic data type as a different informative representation between patients. *MKerW-A* learns the weight of each data type as well as a similarity measure between patients via a non-convex optimization framework. It solves the proposed non-convex problem iteratively using the ADMM algorithm.
+The proposed KNN-based LASSO is a novel framework for dynamic modeling of the associations between  outcomes and  factors using varying-coefficients (VC) regional quantile regression via K-nearest neighbors (KNN) fused Lasso.  It can capture the time-varying effects of age.  We develop an alternating direction method of multipliers (ADMM) algorithm. 
 
 
 ## Main functions
 
-- [generate_sim_matrices.m](https://github.com/ishspsy/MKerW-A/blob/master/Main_functions/generate_sim_matrices.m)
-: Construct multiple similarity matrices using Gaussian kernels (Step 1).
+- [demo_simulation.m](https://github.com/younghhk/software/blob/master/MATLAB/demo_simulation.m)
+: Toy example running the proposed method.
 
-- [clus_sim_update.m](https://github.com/ishspsy/MKerW-A/blob/master/Main_functions/clus_sim_update.m)
-: Main *MKerW-A* algorithm solving optimization problem (Step 2).
+- [VC_qt_knn_admm.m](https://github.com/younghhk/software/blob/master/MATLAB/KNN/VC_qt_knn_admm.m)
+: Main ADMM algorithm solving optimization problem.
 
-- [clus_sim_update_embedded.m](https://github.com/ishspsy/MKerW-A/blob/master/Main_functions/clus_sim_update_embedded.m)
-: Algorithm solving the embedded ADMM algorithm included in Step 2.
+- [likelihood_knn.m](https://github.com/younghhk/software/blob/master/MATLAB/KNN/likelihood_knn.m)
+: Computing likelihood value (used for BIC computation).
 
-
-
-## Main analysis
-
-Please follow the links to reproduce the clustering results of TCGA data sets
-
-- [Example_BRCA.m](https://github.com/ishspsy/MKerW-A/blob/master/example_BRCA.m)
-: This file includes a brief analysis step included in the paper when patients of Breast Invasive Carcinoma (BRCA) cancer are used in our analysis.  
-User may follow the similar analysis step for the other cancer types.
-
-- [Example_BRCA.pdf](https://github.com/ishspsy/MKerW-A/blob/master/example_BRCA.pdf)
-: This pdf file includes a brief analysis step as well as a survival curve using Breast Invasive Carcinoma (BRCA) cancer.
-
--  [Clustering analysis for each cancer type ("main_real.m")](https://github.com/ishspsy/MKerW-A/blob/master/main_real.m)
-: Generate clustering results as well as basic survival analysis results for each of the 22 cancer types. All the analysis in the paper are based on
-the results from this file.
-
--  [Clustering analysis for identifying 22 cancer types ("main_simul.m")](https://github.com/ishspsy/MKerW-A/blob/master/main_simul.m)
-: Generate clustering results related to identifying 22 cancer types.
-
--  [Analysis on target cluster number ("main_simul_cls.m")](https://github.com/ishspsy/MKerW-A/blob/master/main_simul_cls.m)
-: Choose target cluster numbers.
-
--  [Sensitivity analysis ("main_simul_robust.m")](https://github.com/ishspsy/MKerW-A/blob/master/main_simul_robust.m)
-: Sensitivity analysis with respect to changes of regularization parameters.
-
--  [Sensitivity test w.r.t. additive noise ("main_simul_pert.m")](https://github.com/ishspsy/MKerW-A/blob/master/main_simul_pert.m)
-: Sensitivity analysis with respect to additive noise.
-
-
-**Note** Most of the simulations and TCGA data applications were implemented on an Apple MacBook Pro (2.7 GHz, 8 GB of memory) using the MATLAB 2016b. 
-The computational complexity of the algorithm is O(n^3), where n is the number of samples. This complexity is same as that of the traditional spectral clustering algorithm. 
-In our implementation, the proposed algorithm takes only a few minutes.
-
-
-
-
-
-## Directory
-
-- All the functions used in the proposed algorithm *MKerW-A* are located in the directory ["**Main_functions**"](https://github.com/ishspsy/MKerW-A/tree/master/Main_functions).
-
-- All the other supplementary files are located in the directory ["**Other_functions**"](https://github.com/ishspsy/MKerW-A/tree/master/Other_functions).
-
-- All the codes generating figures presented in the paper are located in the directory ["**Generating_Figures**"](https://github.com/ishspsy/MKerW-A/tree/master/Generating_Figures).
-
-- All the resulting files (e.g. .MAT and .eps) are located in the directory ["**Results_files**"](https://github.com/ishspsy/MKerW-A/tree/master/Resulting_files).
-
-
-
-
-
-## TCGA Data
-
-We provide MATLAB implementations of *MKerW-A* in the MKerW-A branch. The 22 TCGA cancer data sets saved in the matlab file can be downloaded from the dropbox directory [**all_data.mat**](https://www.dropbox.com/s/v22fx0j2gnpeta6/all_data.mat?dl=0). 
-
-
-The results in this study are based upon data generated by the TCGA Research Network: http://
-cancergenome.nih.gov/. All the datasets in this paper are Open Access, the link to these
-datasets is https://portal.gdc.cancer.gov/. To avoid batch effects due to use of different platforms,
-we only consider molecular profiles from one platform. These datasets consist of:
-
-
-- De-identified clinical and demographic data
-
-- RNA expression (RNA-seq V2): measured using the Illumina sequencing technology with the log2(x + 1) transformed RSEM (RNA-Seq by Expectation Maximization) values
-
-- miRNA: miRNA mature strand expression RNAseq datasets measured by Illumina miRNA-seq
-
-- Copy Number Alterations (CNA): estimated using the GISTIC2 threshold method
-
-
-The original file formats of these datasets are in .txt format. We collected 22 major cancer types
-with sufficient patients from the TCGA project (downloaded in October 2017). Patients with
-missing molecular profiles were removed, with a total of 6,976 patients included in the clustering
-and survival analysis as follows:
-
-- Bladder Cancer (BLCA), n (sample size) =400
-
-- Breast Invasive Carcinoma (BRCA), n=741
-
-- Cervical Squamous Cell Carcinoma (CESC), n=289
-
-- Colon Adenocarcinoma (COAD), n=249
-
-- Esophageal Cancer (ESCA), n=180
-
-- Head and Neck Squamous Cell carcinoma (HNSC), n=471
-
-- Kidney Renal Clear cell carcinoma (KIRC), n=236
-
-- Kidney Papillary Cell Carcinoma (KIRP), n=283
-
-- Lower Grade Glioma (LGG), n=505
-
-- Liver Cancer (LIHC), n=357
-
-- Lung Adenocarcinoma (LUAD), n=442
-
-- Lung Squamous Cell carcinoma (LUSC), n=333
-
-- Mesothelioma (MESO), n=87
-
-- Ovarian Cancer (OV), n=297
-
-- Pancreatic Cancer (PAAD), n=176
-
-- Prostate Adenocarcinoma (PRAD), n=484
-
-- Rectum Adenocarcinoma (READ), n=87
-
-- Sarcoma (SARC), n=250
-
-- Stomach Adenocarcinoma (STAD), n=365
-
-- Thyroid Cancer (THCA), n=494
-
-- Uterine Corpus Endometrioid Carcinoma (UCEC), n=170
-
-- Uveal Melanoma (UVM), n=80
-
-
-
-
-The above 22 TCGA cancer data sets saved in the matlab file can be obtained from the dropbox directory [**all_data.mat**](https://www.dropbox.com/s/v22fx0j2gnpeta6/all_data.mat?dl=0). 
-
-Specifically, *all_clin* includes clinical information of the patients from the 22 cancer types.
-
-- *all_exp* is the RNA data for all the patients.
-
-- *all_mirna* is the MicroRNA data for all the patients.
-
-- *all_cna* is the CNA data for all the patients.
-
-- *all_pat* is the index vector of patients indicating corresponding cancer types (See the first column of *all_clin* for the original cancer name).
 
 
 
 ## Authors
 
-* [**Seyoung Park**](http://people.yale.edu/search/seyoung_park.profile) and   [**Hongyu Zhao**](https://publichealth.yale.edu/biostat/people/hongyu_zhao.profile)
+* [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home)
+and [**Hyokyoung (Grace) Hong**](https://dceg.cancer.gov/about/staff-directory/hong-grace)
 
  Department of Statistics, Sungkyunkwan University and
- Department of Biostatistics, School of Public Health, Yale University
+ Division of Cancer Epidemiology & Genetics, National Cancer Institute, NIH.
 
 
 ## Contact
 
-* ishspsy@skku.edu
+* grace.hong@nih.gov
 
-## License
-
-This project is licensed under the MIT License.
 
 
 
