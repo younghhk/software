@@ -21,6 +21,15 @@ The proposed KNN-based LASSO is a novel framework for dynamic modeling of the as
 - [supplementary_code](https://github.com/younghhk/software/tree/master/MATLAB/KNN/supplementary_code)
 : Directory including all the source files and functions related to KNN Lasso
 
+## Note
+The  algorithms require the use of nearestneighbour.m by Richard Brown. See details in https://www.mathworks.com/matlabcentral/fileexchange/12574-nearestneighbour-m.
+
+For KNN Lasso algorith, we use the algorithm by Steven Siwei Ye and Oscar Hernan Madrid Padilla. See details in Non-parametric quantile regression via the K-NN fused lasso. Journal of Machine Learning Research, Vol. 22, No. 111, 1-38, 2021.
+
+We use parametric max-flow algorithm in "On Total Variation Minimization and Surface Evolution Using Parametric Maximum Flows" by Antonin Chambolle and Jérôme Darbon (https://link.springer.com/article/10.1007/s11263-009-0238-9). 
+
+
+
 
 ## Authors
 
