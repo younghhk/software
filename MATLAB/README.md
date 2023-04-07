@@ -4,8 +4,7 @@
 
 ## Overview
 
-The proposed KNN-based LASSO is a novel framework for dynamic modeling of the associations between  outcomes and  factors using varying-coefficients (VC) regional quantile regression via K-nearest neighbors (KNN) fused Lasso.  It can capture the time-varying effects of age.  We develop an alternating direction method of multipliers (ADMM) algorithm. 
-
+Our KNN-based LASSO framework is a new approach for dynamic modeling of the associations between risk factors and outcomes using VC regional quantile regression via K-nearest neighbors fused Lasso. One of its strengths is its ability to capture the time-varying effects of age. To make it all work, we've created an ADMM algorithm that uses an alternating direction method of multipliers.
 
 ## Main functions
 
