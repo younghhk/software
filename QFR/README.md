@@ -30,7 +30,7 @@ We use parametric max-flow algorithm in "On Total Variation Minimization and Sur
 
 ## Authors
 
- [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home)
+   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home), [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),
 
  Department of Statistics, Sungkyunkwan University 
  
