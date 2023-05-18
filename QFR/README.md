@@ -34,9 +34,7 @@ We use parametric max-flow algorithm in "On Total Variation Minimization and Sur
 
  Department of Statistics, Sungkyunkwan University 
  
-  [**Sang Kyu Lee**](), 
- 
- and [**Hyokyoung (Grace) Hong**](https://dceg.cancer.gov/about/staff-directory/hong-grace)
+  [**Sang Kyu Lee**](),  and [**Hyokyoung (Grace) Hong**](https://dceg.cancer.gov/about/staff-directory/hong-grace)
  
  Division of Cancer Epidemiology & Genetics, National Cancer Institute, NIH
 
