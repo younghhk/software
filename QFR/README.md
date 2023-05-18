@@ -1,5 +1,4 @@
-# Quantile forward regression for high-dimensional
-survival data (2023)
+# Quantile forward regression for high-dimensional survival data (2023)
 
 
 
@@ -33,10 +32,9 @@ We use parametric max-flow algorithm in "On Total Variation Minimization and Sur
 
  [**Seyoung Park**](https://sites.google.com/view/seyoungpark/home),   [**Eun Ryung Lee**](https://sites.google.com/view/eunryunglee/home)
 
-
  Department of Statistics, Sungkyunkwan University 
  
-  [**Sang Kyu Lee**] 
+  [**Sang Kyu Lee**](), 
  
  and [**Hyokyoung (Grace) Hong**](https://dceg.cancer.gov/about/staff-directory/hong-grace)
  
