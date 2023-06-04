@@ -8,16 +8,16 @@ Our KNN-based LASSO framework is a new approach for dynamic modeling of the asso
 
 ## Main functions
 
-- [demo_simulation.m](https://github.com/younghhk/software/blob/master/MATLAB/demo_simulation.m)
+- [demo_simulation.m](https://github.com/younghhk/software/blob/master/KNN/demo_simulation.m)
 : Toy example running the proposed method.
 
-- [VC_qt_knn_admm.m](https://github.com/younghhk/software/blob/master/MATLAB/KNN/VC_qt_knn_admm.m)
+- [VC_qt_knn_admm.m](https://github.com/younghhk/software/blob/master/KNN/VC_qt_knn_admm.m)
 : Main ADMM algorithm solving optimization problem.
 
-- [likelihood_knn.m](https://github.com/younghhk/software/blob/master/MATLAB/KNN/likelihood_knn.m)
+- [likelihood_knn.m](https://github.com/younghhk/software/blob/master/KNN/likelihood_knn.m)
 : Computing likelihood value (used for BIC computation).
 
-- [supplementary_code](https://github.com/younghhk/software/tree/master/MATLAB/KNN/supplementary_code)
+- [supplementary_code](https://github.com/younghhk/software/tree/master/KNN/supplementary_code)
 : Directory including all the source files and functions related to KNN Lasso
 
 ## Note
