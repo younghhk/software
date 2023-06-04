@@ -8,7 +8,7 @@
  * This novel framework for dynamic modeling of the associations
 between health outcomes and risk factors can capture
 the time-varying effects of age.
-  * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [MATLAB code](MATLAB/demo_simulation.m)
+  * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [MATLAB code](https://github.com/younghhk/software/tree/master/KNN)
   
 
 
