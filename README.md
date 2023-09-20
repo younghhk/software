@@ -4,7 +4,7 @@
  * Our main objective is to develop a quantile-specific prediction model using high-dimensional data. To demonstrate the effectiveness of this model, we present two examples. The first example focuses on the quantile-specific sequential selection of dietary factors associated with BMI. The second example highlights the quantile-specific sequential selection of risk factors for time-to-event analysis. Importantly, our model incorporates race and the interaction between race and risk factors to capture their impact on the predictions.
   * [paper](TBA) &nbsp; &nbsp;&nbsp; &nbsp; [R code](QFR/demo.R)
 
-#### Varying-coefficients for regional quantile via KNN-based LASSO with applications to health outcome study (2023+)
+#### Varying-coefficients for regional quantile via KNN-based LASSO with applications to health outcome study (2023)
  * This novel framework for dynamic modeling of the associations
 between health outcomes and risk factors can capture
 the time-varying effects of age.
