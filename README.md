@@ -1,3 +1,47 @@
+# Incidence-Based Mortality (IBM) Rate and Rate Ratio
+
+This repository contains R functions to compute **Incidence-Based Mortality (IBM) rates** and **rate ratios**.  
+The methods account for small-count bias and provide variance estimates suitable for rare cancers or small populations.
+
+---
+
+##  IBM Rate
+The **IBM rate** is calculated by linking deaths to incident cancer cases in the registry.  
+- Adjustments for small counts are available via:
+  - **Fay–Feuer method** (recommended for rare events)
+  - **Tiwari’s modification** (alternative small-count adjustment)
+
+Rates can be age-adjusted as needed.
+
+---
+
+##  Rate Ratios
+Rate ratios compare IBM rates across groups (e.g., sex, race, or calendar period).  
+- Variance estimation is performed using the **Delta method**,  
+  which approximates the standard error of the log rate ratio.  
+- Confidence intervals are computed on the log scale and then exponentiated.
+
+---
+
+## Resources
+- [Paper](TBA)  
+- [R code](NCI/IBM.R)  
+
+---
+
+## ⚙️ Example Usage
+
+```r
+# Load functions
+source("NCI/IBM.R")
+
+# Example: Compute IBM rate with Fay–Feuer method
+ibm_rate <- compute_dsr_and_rr_for_subset(df, idx1, idx2, "ER- & NHW & 30-54","ER-& NHB & 30-54","Subset", ci_method = "fayfeuer")
+
+
+
+
+
 ## Models for health disparity analysis 
 
 #### Qauntile forward regression for high-dimensional survival data (2023)
