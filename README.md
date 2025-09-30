@@ -37,7 +37,7 @@ source("NCI/IBM.R")
 
 # Example: Compute IBM rate with Fay–Feuer method
 ibm_rate <- compute_dsr_and_rr_for_subset(df, idx1, idx2, "ER- & NHW & 30-54","ER-& NHB & 30-54","Subset", ci_method = "fayfeuer")
-
+```
 
 
 
