@@ -63,4 +63,4 @@
 - **Quantile-Adaptive Model-Free Variable Screening for High-Dimensional Heterogeneous Data (2013)**  
   **Summary:** Nonlinear, model-free screening using spline-based marginal effects at user-chosen quantiles; retains variables with quantile-specific signal.  
   **Published record:** He, X., Wang, L., & Hong, H. G. (2013). *Quantile-adaptive model-free variable screening for high-dimensional heterogeneous data.* *Annals of Statistics*, 41(1), 342–369. [arXiv: 1304.2186](https://arxiv.org/abs/1304.2186) <br>
-  **Code:** [R](R/QR.R)
+  **Code:** [R](R/QA.R)
